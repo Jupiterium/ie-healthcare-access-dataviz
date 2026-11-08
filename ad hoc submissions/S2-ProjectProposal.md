@@ -10,7 +10,7 @@ These are two different sources that measure different things, so on their own t
 Each question is linked to a visualisation task. Chart types will be chosen after exploring the data.
 1.	The shift (change): Between 2016 and 2025, has the main reason people in Ireland go without medical care moved from cost to waiting?
 2.	Ireland vs. the EU (compare): Is the pattern in Ireland different from the EU average?
-3.	Waiting list and survey (relate): Do the number of people on the hospital waiting list and the share who say waiting stopped them getting care go up and down together?
+3.	Waiting list and survey (relate): Has the number of people on the hospital waiting list changed in the same direction as the share of people who say waiting stopped them getting care?
 Potential Stakeholders and Audience
 •	People living in Ireland who need care, who want to know whether waiting or cost is the bigger barrier.
 •	Department of Health and HSE planners, who need to know where people go without care and whether waiting lists are part of the reason.
