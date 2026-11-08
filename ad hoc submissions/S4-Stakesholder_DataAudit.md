@@ -40,7 +40,7 @@ From the news they know that hospital waiting lists are long and that healthcare
 | --- | --- |
 | Do people in Ireland go without care more because of waiting or because of cost, and has that changed since 2016? | Q1 The shift (change) |
 | Is Ireland different from the EU average? | Q2 Ireland vs. the EU (compare) |
-| Does the hospital waiting list move together with the share of people who say waiting stopped them? | Q3 Waiting list and survey (relate) |
+| Has the hospital waiting list changed in the same direction as the share of people who say waiting stopped them? | Q3 Waiting list and survey (relate) |
 
 ### Possible Decisions
 

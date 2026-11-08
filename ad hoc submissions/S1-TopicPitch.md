@@ -8,7 +8,7 @@ Almost 693,000 people were on the public hospital outpatient waiting list in Sep
 ### Possible Questions
 -	Has the main reason people in Ireland go without medical care moved from cost to waiting, between 2016 and 2025?
 -	Is the pattern in Ireland different from the EU average?
--	Do the number of people on the hospital waiting list and the share who say waiting stopped them getting care go up and down together?
+-	Has the number of people on the hospital waiting list changed in the same direction as the share of people who say waiting stopped them getting care?
 
 ### Possible Data Source(s)
 Eurostat - Open Data Browser:
