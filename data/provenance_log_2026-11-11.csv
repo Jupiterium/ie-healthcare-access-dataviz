@@ -1,0 +1,11 @@
+source,where,rows,accessed
+Eurostat hlth_silc_08,https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/hlth_silc_08/A.PC.TOTAL.TXP+WLIST.Y_GE16.T.?format=TSV&compressed=false&startPeriod=2016&endPeriod=2025,92,2026-11-11
+OP-Waiting-List-by-Group-Hospital-2019.csv,https://www.ntpf.ie/waiting-list-data/open-data/,80236,2026-11-11
+OP-Waiting-List-by-Group-Hospital-2020.csv,https://www.ntpf.ie/waiting-list-data/open-data/,85273,2026-11-11
+OP-Waiting-List-By-Group-Hospital-2021-1.csv,https://www.ntpf.ie/waiting-list-data/open-data/,22521,2026-11-11
+OpenData_OPNational02_2021-1.csv,https://www.ntpf.ie/waiting-list-data/open-data/,747,2026-11-11
+OpenData_OPNational02_2022-1.csv,https://www.ntpf.ie/waiting-list-data/open-data/,1056,2026-11-11
+OpenData_OPNational02_2023-1.csv,https://www.ntpf.ie/waiting-list-data/open-data/,1011,2026-11-11
+OpenData_OPNational02_2024-1.csv,https://www.ntpf.ie/waiting-list-data/open-data/,934,2026-11-11
+OpenData_OPNational02_2025.csv,https://www.ntpf.ie/waiting-list-data/open-data/,975,2026-11-11
+OpenData_OPNational02_2026.csv,https://www.ntpf.ie/waiting-list-data/open-data/,709,2026-11-11
