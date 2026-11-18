@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waiting or Paying? Healthcare access in Ireland</title>
+  <meta name="description" content="A short visual report on whether waiting or cost stops people in Ireland getting medical care.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+
+  <p class="eyebrow">The Foreigners, Data Visualisation, TUS</p>
+  <h1>Waiting or paying? Is it getting harder to get healthcare in Ireland?</h1>
+
+  <div class="card first">
+    <p class="hero-text">
+      In Ireland, waiting has become a bigger reason than cost for people going without medical care,
+      and the hospital waiting list has grown over the same years.
+    </p>
+  </div>
+
+  <div class="row three" style="margin-top: 18px">
+    <div class="card">
+      <p class="stat-label">Waiting as the reason, 2025</p>
+      <p class="stat-value c-waiting" id="stat-waiting"></p>
+      <p class="stat-note" id="note-waiting"></p>
+    </div>
+    <div class="card">
+      <p class="stat-label">Cost as the reason, 2025</p>
+      <p class="stat-value c-cost" id="stat-cost"></p>
+      <p class="stat-note" id="note-cost"></p>
+    </div>
+    <div class="card">
+      <p class="stat-label">Ireland's rank on waiting, 2025</p>
+      <p class="stat-value" id="stat-rank"></p>
+      <p class="stat-note">highest of the 27 EU countries</p>
+    </div>
+  </div>
+
+  <!-- Chart 1 (Daniel) goes here, in a card like the ones below -->
+
+  <!-- Ireland vs the EU: line charts -->
+  <div class="card">
+    <p class="title">Ireland vs the EU: waiting and cost, 2016 to 2025</p>
+    <p class="sub">Ireland is above the EU average on waiting in every year, and below it on cost since 2020.</p>
+    <div class="row two">
+      <div>
+        <p class="mini-title">Waiting list</p>
+        <div class="chart short">
+          <canvas id="ireland-waiting" role="img"
+            aria-label="Line chart: Ireland against the EU average on the waiting reason, 2016 to 2025. Ireland is above the EU average in every year."></canvas>
+        </div>
+      </div>
+      <div>
+        <p class="mini-title">Too expensive</p>
+        <div class="chart short">
+          <canvas id="ireland-cost" role="img"
+            aria-label="Line chart: Ireland against the EU average on the cost reason, 2016 to 2025. Ireland is below the EU average from 2020."></canvas>
+        </div>
+      </div>
+    </div>
+    <p class="take">
+      <strong>Waiting:</strong> Ireland rises from 1.0% to 2.1% (peak 2.7% in 2024) and the EU average from 0.8% to 1.2%.
+      <strong>Cost:</strong> Ireland falls from 1.5% to 0.6%, while the EU average stays close to 1.0%.
+      Both charts use the same scale.
+    </p>
+  </div>
+
+  <!-- Ireland vs the EU: 2025 ranking -->
+  <div class="card">
+    <p class="title" id="rank-title"></p>
+    <p class="sub">% of people aged 16+, 2025, highest at the top</p>
+    <div class="row two">
+      <div>
+        <p class="mini-title">Waiting list</p>
+        <div class="chart tall">
+          <canvas id="rank-waiting" role="img"
+            aria-label="Sorted bar chart of the 27 EU countries and the EU average on the waiting reason in 2025, with Ireland highlighted."></canvas>
+        </div>
+      </div>
+      <div>
+        <p class="mini-title">Too expensive</p>
+        <div class="chart tall">
+          <canvas id="rank-cost" role="img"
+            aria-label="Sorted bar chart of the 27 EU countries and the EU average on the cost reason in 2025, with Ireland highlighted."></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="key">
+      <span><i style="background: var(--waiting)"></i>Ireland (waiting)</span>
+      <span><i style="background: var(--cost)"></i>Ireland (cost)</span>
+      <span><i style="background: var(--eu)"></i>EU27 average</span>
+      <span><i style="background: var(--other)"></i>Other EU countries</span>
+    </div>
+    <p class="take">
+      <strong>Waiting:</strong> Ireland (2.1%) is above the EU average (1.2%), but far below Finland (7.3%) and Estonia (6.9%).
+      <strong>Cost:</strong> Ireland (0.6%) is below the EU average (1.0%), and Greece (8.8%) is far ahead of everyone.
+    </p>
+  </div>
+
+  <!-- Charts 3a and 3b (Steven) and chart 4 (Alessandro) go here, in cards like the ones above -->
+
+  <div class="notes">
+    <p>
+      These are patterns, not causes. Values are small, so a difference of 0.1 or 0.2 points
+      can be survey noise. Eurostat flags a break in Ireland's series in 2019 and 2020, so those years are not fully comparable.
+      The survey covers all medical care, and the EU average is Eurostat's own weighted figure.
+    </p>
+    <p>
+      <strong>Source.</strong> Eurostat EU-SILC,
+      <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_silc_08/default/table?lang=en">hlth_silc_08</a>,
+      accessed November 2026. Code and prepared data:
+      <a href="https://github.com/Jupiterium/ie-healthcare-access-dataviz">project repository</a>.
+    </p>
+  </div>
+
+</main>
+
+<footer>Huong "Jenny" Tran, Daniel Raducan, Yu Lin "Steven" Wan, Alessandro Bellassai.</footer>
+
+<noscript>
+  <p style="max-width: 1040px; margin: 0 auto; padding: 0 20px 24px; color: #6b7690">
+    The charts need JavaScript. The numbers are in the project repository.
+  </p>
+</noscript>
+
+<!-- the chart library, the numbers (built by make_data.py), and the code for the charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="data.js"></script>
+<script src="js/charts.js"></script>
+
+</body>
+</html>
