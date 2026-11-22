@@ -23,6 +23,7 @@ The two prepared tables are in `data/prepared`:
 | Folder or file | What it is |
 | --- | --- |
 | `Data_Audit.ipynb` | The data audit: loads the raw data, checks it, cleans it and builds the two prepared tables |
+| `daniel/Charts_Daniel_v1.ipynb` | Chart 1 for question 1 (waiting vs cost in Ireland), with the reasoning, checks and decisions |
 | `IrelandvsEUCharts.ipynb` | The charts for question 2 (Ireland vs the EU), with the reasoning for each chart type |
 | `data/prepared` | The prepared tables and a log of what was loaded |
 | `data/raw` | Raw downloads, created when the audit notebook runs (not committed) |
@@ -35,14 +36,14 @@ The two prepared tables are in `data/prepared`:
 
 1. Install Python and the packages: `pip install pandas matplotlib jupyter`.
 2. Open `Data_Audit.ipynb` and run it from the top. It downloads the Eurostat data when it runs, and reads the NTPF files from the zip. This rebuilds the tables in `data/prepared`. You can skip this step, because the prepared tables are already in the repo.
-3. Open `IrelandvsEUCharts.ipynb` and run it. It reads the prepared tables and saves the charts in `figures`.
+3. Open the chart notebooks (`daniel/Charts_Daniel_v1.ipynb`, `IrelandvsEUCharts.ipynb`) and run each one from the top. They read the prepared tables and save the charts in `figures`. In VS Code or Cursor, pick a Python environment that has the packages above as the notebook kernel.
 4. For the report page, run `python docs/make_data.py` from this folder after the tables change, then open `docs/index.html`. The page loads its chart library from the internet.
 
 ## Charts and owners
 
 | Question | Chart | Owner | Where |
 | --- | --- | --- | --- |
-| Q1 The shift | Waiting and cost in Ireland over time | Daniel | to be added |
+| Q1 The shift | Waiting and cost in Ireland over time | Daniel | `daniel/Charts_Daniel_v1.ipynb`, `figures/chart1_waiting_vs_cost.png` |
 | Q2 Ireland vs the EU | Line charts and a 2025 ranking, waiting and cost side by side | Jenny | `IrelandvsEUCharts.ipynb`, `figures` |
 | Q3 Waiting list and survey | The list over time, how long people wait, and the list against the survey | Steven and Alessandro | to be added |
 
