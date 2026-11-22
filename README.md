@@ -47,7 +47,7 @@ The two prepared tables are in `data/prepared`:
 | Q1 The shift | Waiting and cost in Ireland over time | Daniel | to be added |
 | Q2 Ireland vs the EU | Line charts and a 2025 ranking, waiting and cost side by side | Jenny | `IrelandvsEUCharts.ipynb`, `figures` |
 | Q3 Waiting list and survey | The list against the survey, on the same years | Alessandro | `ListvsSurveyCharts.ipynb`, `figures` |
-| Q3 context | The list over time, and how long people wait | Steven | to be added |
+| Q3 context | The list over time, and how long people wait | Steven | `WaitingList.ipynb`, `figures` |
 
 ## Limits
 
