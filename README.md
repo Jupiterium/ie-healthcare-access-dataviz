@@ -24,6 +24,8 @@ The two prepared tables are in `data/prepared`:
 | --- | --- |
 | `Data_Audit.ipynb` | The data audit: loads the raw data, checks it, cleans it and builds the two prepared tables |
 | `IrelandvsEUCharts.ipynb` | The charts for question 2 (Ireland vs the EU), with the reasoning for each chart type |
+| `ListvsSurveyCharts.ipynb` | The chart for question 3 (the waiting list against the survey answer), with the reasoning for the chart type |
+| `Alessandro Data Viz` | The same chart 4 code as a plain Python script |
 | `data/prepared` | The prepared tables and a log of what was loaded |
 | `data/raw` | Raw downloads, created when the audit notebook runs (not committed) |
 | `ntpf_files_for_data_raw.zip` | The nine NTPF files, saved from the NTPF website because it does not allow downloads from Python |
@@ -35,7 +37,7 @@ The two prepared tables are in `data/prepared`:
 
 1. Install Python and the packages: `pip install pandas matplotlib jupyter`.
 2. Open `Data_Audit.ipynb` and run it from the top. It downloads the Eurostat data when it runs, and reads the NTPF files from the zip. This rebuilds the tables in `data/prepared`. You can skip this step, because the prepared tables are already in the repo.
-3. Open `IrelandvsEUCharts.ipynb` and run it. It reads the prepared tables and saves the charts in `figures`.
+3. Open `IrelandvsEUCharts.ipynb` and `ListvsSurveyCharts.ipynb` and run them. They read the prepared tables and save the charts in `figures`.
 4. For the report page, run `python docs/make_data.py` from this folder after the tables change, then open `docs/index.html`. The page loads its chart library from the internet.
 
 ## Charts and owners
@@ -44,7 +46,8 @@ The two prepared tables are in `data/prepared`:
 | --- | --- | --- | --- |
 | Q1 The shift | Waiting and cost in Ireland over time | Daniel | to be added |
 | Q2 Ireland vs the EU | Line charts and a 2025 ranking, waiting and cost side by side | Jenny | `IrelandvsEUCharts.ipynb`, `figures` |
-| Q3 Waiting list and survey | The list over time, how long people wait, and the list against the survey | Steven and Alessandro | to be added |
+| Q3 Waiting list and survey | The list against the survey, on the same years | Alessandro | `ListvsSurveyCharts.ipynb`, `figures` |
+| Q3 context | The list over time, and how long people wait | Steven | to be added |
 
 ## Limits
 
