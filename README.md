@@ -30,15 +30,15 @@ The two prepared tables are in `data/prepared`:
 | `data/raw` | Raw downloads, created when the audit notebook runs (not committed) |
 | `ntpf_files_for_data_raw.zip` | The nine NTPF files, saved from the NTPF website because it does not allow downloads from Python |
 | `figures` | The charts as PNG files |
-| `docs` | The report page. Open `docs/index.html` in a browser |
+| `dashboard` | The report page, with a menu for each chart. Open `dashboard/index.html` in a browser |
 | `ad hoc submissions` | The Word documents, the markdown copies and the group presentation |
 
 ## How to run it
 
 1. Install Python and the packages: `pip install -r requirements.txt`.
 2. Open `Data_Audit.ipynb` and run it from the top. It downloads the Eurostat data when it runs, and reads the NTPF files from the zip. This rebuilds the tables in `data/prepared`. You can skip this step, because the prepared tables are already in the repo.
-3. Open `IrelandvsEUCharts.ipynb` and `ListvsSurveyCharts.ipynb` and run them. They read the prepared tables and save the charts in `figures`.
-4. For the report page, run `python docs/make_data.py` from this folder after the tables change, then open `docs/index.html`. The page loads its chart library from the internet.
+3. Open `IrelandvsEUCharts.ipynb`, `WaitingList.ipynb` and `ListvsSurveyCharts.ipynb` and run them. They read the prepared tables and save the charts in `figures`.
+4. For the report page, run `python dashboard/make_data.py` from this folder after the tables change, then open `dashboard/index.html`. The page loads its chart library from the internet.
 
 ## Charts and owners
 

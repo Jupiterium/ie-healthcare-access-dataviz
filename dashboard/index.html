@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waiting or Paying? Healthcare access in Ireland</title>
+  <meta name="description" content="A visual report on whether waiting or cost stops people in Ireland getting medical care: the problem, how we show it, and what each chart says.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <p class="eyebrow">The Foreigners, Data Visualisation, TUS</p>
+    <p class="brand">Waiting or paying? Healthcare access in Ireland</p>
+  </div>
+  <nav class="tabs" aria-label="Report sections">
+    <a href="#overview" data-view="overview">Overview</a>
+    <a href="#problem" data-view="problem">Problem</a>
+    <a href="#approach" data-view="approach">How we show it</a>
+    <a href="#chart2" data-view="chart2">2 Ireland vs EU</a>
+    <a href="#chart3" data-view="chart3">3 The list</a>
+    <a href="#chart4" data-view="chart4">4 List vs survey</a>
+    <a href="#limits" data-view="limits">Limits</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="view" id="v-overview">
+    <h1>Is it getting harder to get healthcare in Ireland?</h1>
+
+    <div class="card first">
+      <p class="hero-text">
+        In Ireland, waiting has become a bigger reason than cost for people going without medical care,
+        and the hospital waiting list has grown over the same years.
+      </p>
+    </div>
+
+    <div class="row three">
+      <div class="card">
+        <p class="stat-label">Waiting as the reason, 2025</p>
+        <p class="stat-value c-waiting" id="stat-waiting"></p>
+        <p class="stat-note" id="note-waiting"></p>
+      </div>
+      <div class="card">
+        <p class="stat-label">Cost as the reason, 2025</p>
+        <p class="stat-value c-cost" id="stat-cost"></p>
+        <p class="stat-note" id="note-cost"></p>
+      </div>
+      <div class="card">
+        <p class="stat-label">People on the outpatient list, Sep 2026</p>
+        <p class="stat-value" id="stat-list"></p>
+        <p class="stat-note" id="note-list"></p>
+      </div>
+    </div>
+
+    <h2>Findings</h2>
+    <div class="row two">
+      <a class="card link" href="#chart2">
+        <p class="num">2</p>
+        <p class="finding">Ireland is above the EU average on waiting</p>
+        <p class="stat-note">2.1% against 1.2%, 8th highest of 27</p>
+        <p class="more">See chart 2</p>
+      </a>
+      <a class="card link" href="#chart3">
+        <p class="num">3</p>
+        <p class="finding">The list grew, but not in step with the survey</p>
+        <p class="stat-note">Long waits fell while the list grew</p>
+        <p class="more">See charts 3 and 4</p>
+      </a>
+    </div>
+
+    <p class="guide">Use the bar above to follow the story: the problem, how we show it, then each chart with why we chose it and what it shows.</p>
+    <div class="pager"><span></span><a href="#problem">Next: the problem</a></div>
+  </section>
+
+
+  <section class="view" id="v-problem">
+    <h1>The problem</h1>
+
+    <div class="card first">
+      <p class="lead">
+        When people in Ireland need medical care, two things can stop them: a long wait for public hospital care,
+        or the cost of care. Both are in the news, but it is unclear which one stops more people today,
+        whether Ireland is different from the rest of the EU, and whether what people report follows the hospital waiting list.
+      </p>
+    </div>
+
+    <h2>Questions</h2>
+    <div class="row two">
+      <a class="card link" href="#chart2">
+        <p class="num">2</p>
+        <p class="finding">Ireland vs the EU</p>
+        <p class="stat-note">Is the pattern in Ireland different from the EU average?</p>
+        <p class="more">Chart 2, compare with a benchmark</p>
+      </a>
+      <a class="card link" href="#chart3">
+        <p class="num">3</p>
+        <p class="finding">Moving together</p>
+        <p class="stat-note">Has the hospital waiting list changed in the same direction as the share who say waiting stopped them?</p>
+        <p class="more">Charts 3 and 4, relate two measures</p>
+      </a>
+    </div>
+
+    <div class="row two">
+      <div class="card">
+        <p class="title">Who it is for</p>
+        <p class="plain">
+          Students, journalists and the general public, with no statistics background, who read quickly and want one clear finding.
+          People who plan or campaign for care, such as HSE planners and patient groups, already have more detailed data, so we keep the charts simple and the limits visible.
+        </p>
+      </div>
+      <div class="card">
+        <p class="title">What we left out</p>
+        <p class="plain">
+          Age, income, insurance, prices and individual hospitals. Two sources and three questions are enough to see the pattern,
+          and about ten yearly points cannot support more. We describe patterns and do not claim causes.
+        </p>
+      </div>
+    </div>
+    <div class="pager"><a href="#overview">Back: overview</a><a href="#approach">Next: how we show it</a></div>
+  </section>
+
+
+  <section class="view" id="v-approach">
+    <h1>How we show it, and why</h1>
+
+    <div class="row two">
+      <div class="card">
+        <p class="title">Survey: Eurostat EU-SILC</p>
+        <p class="stat-note">560 rows: 28 areas, 10 years, 2 reasons</p>
+        <p class="plain">The share of people aged 16+ who needed a medical examination and did not get one, by main reason: too expensive or waiting list. A yearly percentage.</p>
+      </div>
+      <div class="card">
+        <p class="title">Hospital list: NTPF open data</p>
+        <p class="stat-note">370 rows: 92 monthly snapshots, January 2019 to September 2026</p>
+        <p class="plain">People on the public hospital outpatient waiting list, by how long they have waited. A monthly count.</p>
+      </div>
+    </div>
+    <p class="guide">The two tables measure different things, so we keep them separate and compare them side by side by year. We never join them.</p>
+
+    <h2>Why each chart looks the way it does</h2>
+    <div class="card table-card">
+      <table>
+        <thead>
+          <tr><th>Task</th><th>Chart</th><th>Why this chart</th><th>Not used</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#chart2">2</a> Compare Ireland with a benchmark</td>
+            <td>Two line panels on one scale, then sorted bars</td>
+            <td>The same scale makes waiting and cost comparable. Sorted bars from zero show where Ireland sits among the countries.</td>
+            <td>Four lines in one panel. Pie charts and maps.</td>
+          </tr>
+          <tr>
+            <td><a href="#chart3">3</a> See the size and make-up of the list</td>
+            <td>Line chart, then grouped bars</td>
+            <td>A line shows one total over 92 snapshots. Grouped bars compare the waiting-time bands across years from zero.</td>
+            <td>Stacked area: only the bottom layer is easy to read, and the 18+ months group is the story.</td>
+          </tr>
+          <tr>
+            <td><a href="#chart4">4</a> Relate two different measures</td>
+            <td>Two stacked line panels, one year axis</td>
+            <td>Each measure keeps its own honest scale and the reader compares direction.</td>
+            <td>A dual axis overstates the link. A scatter hides time. Bars from zero hide the change.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row two">
+      <div class="card">
+        <p class="title">One set of rules</p>
+        <ul class="plain">
+          <li>Waiting is always orange, cost is always blue, the EU average is grey and dashed.</li>
+          <li>Each chart shows only its main parts: a title, a finding line, labelled axes with values, the data, a legend and a short source.</li>
+          <li>Titles say the finding, and the numbers are checked against the prepared tables.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="title">Who chose what</p>
+        <p class="plain">
+          An AI agent listed options with pros and cons and wrote code. The team chose the chart types, titles, what to leave out and the wording,
+          and checked every number. Each decision and its reason is in our AI Decision Log.
+        </p>
+      </div>
+    </div>
+    <div class="pager"><a href="#problem">Back: the problem</a><a href="#chart2">Next: chart 2</a></div>
+  </section>
+
+
+  <!-- Chart 1 (Daniel) goes here later: a view like the ones below, plus its tab, its finding and its question above -->
+
+  <section class="view" id="v-chart2">
+    <p class="kicker">Chart 2 &middot; Question 2, Ireland vs the EU</p>
+    <h1>Ireland is above the EU average on waiting, below it on cost</h1>
+
+    <div class="card first">
+      <p class="title">Waiting and cost, 2016 to 2025</p>
+      <p class="sub">Ireland against the EU average, % of people aged 16+, same scale in both panels.</p>
+      <div class="row two">
+        <div>
+          <p class="mini-title">Waiting list</p>
+          <div class="chart short">
+            <canvas id="ireland-waiting" role="img"
+              aria-label="Line chart: Ireland against the EU average on the waiting reason, 2016 to 2025. Ireland is above the EU average in every year."></canvas>
+          </div>
+        </div>
+        <div>
+          <p class="mini-title">Too expensive</p>
+          <div class="chart short">
+            <canvas id="ireland-cost" role="img"
+              aria-label="Line chart: Ireland against the EU average on the cost reason, 2016 to 2025. Ireland is below the EU average from 2020."></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="title" id="rank-title"></p>
+      <p class="sub">% of people aged 16+, 2025, highest at the top.</p>
+      <div class="row two">
+        <div>
+          <p class="mini-title">Waiting list</p>
+          <div class="chart tall">
+            <canvas id="rank-waiting" role="img"
+              aria-label="Sorted bar chart of the 27 EU countries and the EU average on the waiting reason in 2025, with Ireland highlighted."></canvas>
+          </div>
+        </div>
+        <div>
+          <p class="mini-title">Too expensive</p>
+          <div class="chart tall">
+            <canvas id="rank-cost" role="img"
+              aria-label="Sorted bar chart of the 27 EU countries and the EU average on the cost reason in 2025, with Ireland highlighted."></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="key">
+        <span><i style="background: var(--waiting)"></i>Ireland (waiting)</span>
+        <span><i style="background: var(--cost)"></i>Ireland (cost)</span>
+        <span><i style="background: var(--eu)"></i>EU27 average</span>
+        <span><i style="background: var(--other)"></i>Other EU countries</span>
+      </div>
+    </div>
+
+    <div class="row two">
+      <div class="card">
+        <p class="title">Why these charts</p>
+        <p class="plain">
+          Waiting and cost sit side by side on the same 0 to 3% scale, so they can be compared directly and small cost changes do not look as big as waiting changes.
+          Lines suit change over time, and the EU average is dashed grey so Ireland stands out.
+          The ranking is one value per country in one year, so sorted bars from zero let the reader compare lengths and find a country by name.
+        </p>
+      </div>
+      <div class="card">
+        <p class="title">What they show</p>
+        <p class="plain">
+          Waiting: Ireland rises from 1.0% to 2.1% (peak 2.7% in 2024) and the EU average from 0.8% to 1.2%, so Ireland is above it in every year.
+          Cost: Ireland falls from 1.5% to 0.6% and is below the EU average from 2020.
+          In 2025 Ireland is 8th highest of 27 on waiting, but far below Finland (7.3%) and Estonia (6.9%). It is above average, not an outlier.
+        </p>
+      </div>
+    </div>
+    <p class="keep"><strong>Keep in mind.</strong> Ireland's series has a break in 2019 and 2020, which the chart does not mark. The ranking shows order, not the size of the gaps, and it is one year only. The EU average is Eurostat's own weighted figure.</p>
+    <div class="pager"><a href="#approach">Back: how we show it</a><a href="#chart3">Next: chart 3</a></div>
+  </section>
+
+
+  <section class="view" id="v-chart3">
+    <p class="kicker">Chart 3 &middot; Question 3, context: the hospital list</p>
+    <h1>The waiting list has grown, and the longest waits have shrunk</h1>
+
+    <div class="card first">
+      <p class="title">3a. The outpatient waiting list, January 2019 to September 2026</p>
+      <p class="sub">People on the list at each monthly snapshot, in thousands. The axis starts at 450 thousand. The line breaks where June 2021 has no snapshot.</p>
+      <div class="chart wide">
+        <canvas id="list-monthly" role="img"
+          aria-label="Line chart of the national outpatient waiting list by month. It grows from 523,225 in January 2019 to 692,529 in September 2026, with a peak near 654,000 in 2021 and a low near 557,000 in late 2024."></canvas>
+      </div>
+      <p class="take">
+        <strong>Why a line.</strong> There are 92 monthly points of one number, so a line shows the trend and the gap. Bars would be too crowded, and a stacked area would hide the shape of the total.
+        <strong>What it shows.</strong> The list grew by about 170,000 people. It rose to about 654,000 in 2021, fell to about 557,000 by the end of 2024, then rose steeply.
+      </p>
+    </div>
+
+    <div class="card">
+      <p class="title">3b. How long people wait</p>
+      <p class="sub">Yearly average of the monthly snapshots, in thousands. 2026 covers January to September.</p>
+      <div class="chart wide">
+        <canvas id="list-bands" role="img"
+          aria-label="Grouped bar chart of the average number of people on the list by waiting time, for 2019, 2021, 2024 and 2026. People waiting 18 months or more peak at about 178,000 in 2021 and fall to about 50,000 in 2024 and 2026."></canvas>
+      </div>
+      <p class="take">
+        <strong>Why grouped bars.</strong> The question is how each waiting-time band changed across years, and bars compare values side by side from a zero baseline.
+        A stacked area would make the 18+ months group, which is the story, the hardest to read.
+        <strong>What it shows.</strong> People waiting 18 months or more peaked at about 178,000 in 2021 and are now about 50,000, under 30% of the peak, while the 0 to 6 month group grew from about 262,000 to 391,000.
+        The list is bigger, but most of the growth is in shorter waits.
+      </p>
+    </div>
+    <p class="keep"><strong>Keep in mind.</strong> The list counts people waiting at a date, not people treated, and covers public hospital outpatients only. The data does not say why long waits fell, so we do not claim a reason. The tiny "unknown" band is left out, and 2026 has nine months.</p>
+    <div class="pager"><a href="#chart2">Back: chart 2</a><a href="#chart4">Next: chart 4</a></div>
+  </section>
+
+
+  <section class="view" id="v-chart4">
+    <p class="kicker">Chart 4 &middot; Question 3, moving together?</p>
+    <h1>The list and the survey rose overall, but not in step every year</h1>
+
+    <div class="card first">
+      <p class="sub">The same years in two panels. Each panel has its own scale, and the top one starts at 500 thousand.</p>
+      <p class="mini-title left">People on the outpatient waiting list (yearly average, thousands)</p>
+      <div class="chart half">
+        <canvas id="cmp-list" role="img"
+          aria-label="Line chart of the yearly average waiting list, 2019 to 2025. It rises to about 636,000 in 2021, falls to about 586,000 in 2024 and rises to about 602,000 in 2025."></canvas>
+      </div>
+      <p class="mini-title left">Went without care because of waiting, Ireland (% of people aged 16+)</p>
+      <div class="chart half">
+        <canvas id="cmp-survey" role="img"
+          aria-label="Line chart of the survey answer, 2019 to 2025. It rises from 1.0% to 2.7% in 2024 and is 2.1% in 2025."></canvas>
+      </div>
+    </div>
+
+    <div class="row two">
+      <div class="card">
+        <p class="title">Why this chart</p>
+        <p class="plain">
+          The two measures have different units, so we use two panels on one year axis. One chart with two y-axes would let us pick ranges that make the lines look tightly linked.
+          A scatter hides time and has only seven points, and bars from zero would make the change in the list look tiny.
+          2026 is left out because it has only nine months.
+        </p>
+      </div>
+      <div class="card">
+        <p class="title">What it shows</p>
+        <p class="plain">
+          Both are higher in 2025 than in 2019 (list about 556,000 to 602,000, survey answer 1.0% to 2.1%).
+          Year by year the link is weak: the list peaked in 2021 and fell until 2024, while the survey answer stayed high and reached 2.7% in 2024.
+          They moved the same way in only 3 of 6 yearly changes.
+        </p>
+      </div>
+    </div>
+    <p class="keep"><strong>Keep in mind.</strong> This shows direction, not cause. The survey covers all medical care and the list covers hospital outpatients only. Eurostat flags a break in Ireland's series in 2019 and 2020, and the 2021 average uses 11 snapshots because June is missing.</p>
+    <div class="pager"><a href="#chart3">Back: chart 3</a><a href="#limits">Next: limits</a></div>
+  </section>
+
+  
+  <section class="view" id="v-limits">
+    <h1>What these charts cannot tell you</h1>
+    <div class="card first">
+      <ul class="plain wide-list">
+        <li><strong>Patterns, not causes.</strong> There are about ten yearly points, and two series that trend over the same years look related.</li>
+        <li><strong>Different measures.</strong> The survey covers all medical care, and the list covers hospital outpatients only.</li>
+        <li><strong>Small percentages.</strong> A difference of 0.1 or 0.2 points can be survey noise.</li>
+        <li><strong>Break and COVID years.</strong> Eurostat flags a break in Ireland's series in 2019 and 2020. COVID may affect both sources.</li>
+        <li><strong>NTPF data issues.</strong> Repeated rows in 2025 and 2026 are added as split rows, and June 2021 has no snapshot. NTPF has confirmed neither.</li>
+        <li><strong>The EU average</strong> is Eurostat's weighted figure, not a simple average of 27 countries.</li>
+      </ul>
+    </div>
+    <div class="notes">
+      <p>
+        <strong>Sources.</strong> Eurostat EU-SILC,
+        <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_silc_08/default/table?lang=en">hlth_silc_08</a>, and the
+        <a href="https://www.ntpf.ie/waiting-list-data/open-data/">NTPF outpatient waiting list open data</a>, accessed November 2026.
+        Code and prepared data: <a href="https://github.com/Jupiterium/ie-healthcare-access-dataviz">project repository</a>.
+      </p>
+    </div>
+    <div class="pager"><a href="#chart4">Back: chart 4</a><a href="#overview">Back to the overview</a></div>
+  </section>
+
+</main>
+
+<footer>Huong "Jenny" Tran, Daniel Raducan, Yu Lin "Steven" Wan, Alessandro Bellassai.</footer>
+
+<noscript>
+  <p style="max-width: 1040px; margin: 0 auto; padding: 0 20px 24px; color: #6b7690">
+    The page needs JavaScript. The numbers are in the project repository.
+  </p>
+</noscript>
+
+<!-- the chart library, the numbers (built by make_data.py), and the code for the charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="data.js"></script>
+<script src="js/charts.js"></script>
+
+</body>
+</html>
