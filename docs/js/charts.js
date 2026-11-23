@@ -1,9 +1,11 @@
 /*
- * The report page: navigation between the views, and the charts. The charts match the notebooks:
+ * The report page and the one-chart pages: navigation between the views, and the charts. The charts match the notebooks:
+ *   1. Waiting and cost in Ireland over time                 (chart 1, Daniel)
  *   2. Ireland against the EU average, and a 2025 ranking    (charts 2 and 2b, Jenny)
  *   3. The waiting list over time, and how long people wait  (charts 3a and 3b, Steven)
  *   4. The waiting list and the survey on the same years     (chart 4, Alessandro)
  * The numbers come from data.js, which make_data.py builds from the prepared tables.
+ * A one-chart page sets <body data-chart="chart1"> (or chart2, chart3, chart4) and gets only that chart, with no menu.
  */
 (function () {
   'use strict';
@@ -32,7 +34,8 @@
   const people = (value) => Math.round(value).toLocaleString('en-IE');
   const last = (list) => list[list.length - 1];
   const setText = (id, text) => {
-    document.getElementById(id).textContent = text;
+    const element = document.getElementById(id);
+    if (element) element.textContent = text; // a one-chart page has only some of these
   };
 
   // ---------- key numbers on the overview, and the ranking title ----------
@@ -117,6 +120,86 @@
         ctx.restore();
       },
     };
+  }
+
+  // ---------- chart 1: waiting and cost in Ireland over time ----------
+
+  function drawChart1() {
+    const breaks = S.break_years; // Eurostat's break years, drawn as hollow points
+    const isBreak = (i) => breaks.includes(S.years[i]);
+
+    const series = (label, data, color) => ({
+      ...lineSeries(label, data, color, [], 3),
+      pointRadius: 5,
+      pointHoverRadius: 7,
+      pointBorderWidth: 2,
+      pointBorderColor: color,
+      pointBackgroundColor: data.map((_, i) => (isBreak(i) ? '#ffffff' : color)),
+    });
+
+    // the COVID years (2020 and 2021) as a light grey band behind the lines
+    const covidBand = {
+      id: 'covidBand',
+      beforeDatasetsDraw(chart) {
+        const { ctx, chartArea, scales } = chart;
+        const from = scales.x.getPixelForValue(S.years.indexOf(2020) - 0.5);
+        const to = scales.x.getPixelForValue(S.years.indexOf(2021) + 0.5);
+        ctx.save();
+        ctx.fillStyle = 'rgba(137, 135, 129, 0.12)';
+        ctx.fillRect(from, chartArea.top, to - from, chartArea.bottom - chartArea.top);
+        ctx.fillStyle = COLORS.eu;
+        ctx.font = '12px system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillText('COVID years', (from + to) / 2, chartArea.top + 6);
+        ctx.restore();
+      },
+    };
+
+    // a label at the end of each line, so no legend is needed
+    const endLabels = {
+      id: 'endLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        ctx.save();
+        ctx.font = 'bold 14px system-ui, sans-serif';
+        ctx.textBaseline = 'middle';
+        ctx.textAlign = 'left';
+        chart.data.datasets.forEach((dataset, d) => {
+          const point = last(chart.getDatasetMeta(d).data);
+          ctx.fillStyle = dataset.borderColor;
+          ctx.fillText(`${dataset.label} ${pct(last(dataset.data))}`, point.x + 12, point.y);
+        });
+        ctx.restore();
+      },
+    };
+
+    new Chart(document.getElementById('shift'), {
+      type: 'line',
+      data: {
+        labels: S.years,
+        datasets: [series('Waiting list', S.ie_waiting, COLORS.waiting), series('Too expensive', S.ie_cost, COLORS.cost)],
+      },
+      options: {
+        ...baseOptions,
+        layout: { padding: { right: 150 } }, // room for the end labels
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items) => items[0].label + (isBreak(items[0].dataIndex) ? ' (break in the series)' : ''),
+              label: (ctx) => ctx.dataset.label + ': ' + pct(ctx.parsed.y),
+              footer: (items) => {
+                const gap = S.ie_waiting[items[0].dataIndex] - S.ie_cost[items[0].dataIndex];
+                return (gap >= 0 ? 'Waiting is higher by ' : 'Cost is higher by ') + Math.abs(gap).toFixed(1) + ' points';
+              },
+            },
+          },
+        },
+        scales: { x: yearAxis(), y: yAxis(0, 3, 0.5, (v) => pct(v), '% of people aged 16+') }, // the same 0 to 3% scale as chart 2
+      },
+      plugins: [covidBand, endLabels],
+    });
   }
 
   // ---------- chart 2: Ireland against the EU average, and the 2025 ranking ----------
@@ -291,10 +374,18 @@
   // ---------- navigation: one view at a time, drawn the first time it is opened ----------
 
   const drawers = {
+    chart1: drawChart1,
     chart2: drawChart2,
     chart3: drawChart3,
     chart4: drawChart4,
   };
+  // a one-chart page: draw its chart and stop (no menu, no views)
+  const single = document.body.dataset.chart;
+  if (single) {
+    drawers[single]();
+    return;
+  }
+
   const drawn = {};
   const views = Array.from(document.querySelectorAll('.view'));
   const tabs = Array.from(document.querySelectorAll('.tabs a'));

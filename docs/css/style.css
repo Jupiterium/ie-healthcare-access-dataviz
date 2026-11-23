@@ -484,3 +484,29 @@ footer {
     display: none;
   }
 }
+
+/* ---------- one-chart pages for the presentation (body class "present") ---------- */
+
+.present {
+  --page-width: 1280px;
+}
+
+.present main {
+  padding-top: 22px;
+}
+
+.present .chart.wide {
+  height: max(380px, 60vh);
+}
+
+.present .chart.short {
+  height: max(340px, 56vh);
+}
+
+.present .chart.half {
+  height: max(220px, 30vh);
+}
+
+.present .card + .card {
+  margin-top: 18px;
+}
