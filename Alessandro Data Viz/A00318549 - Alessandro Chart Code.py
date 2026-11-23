@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 BASE_DIR = Path(__file__).resolve().parent
-PREPARED = BASE_DIR / "data" / "prepared"
+PREPARED = BASE_DIR.parent / "data" / "prepared"
 FIGURES = BASE_DIR / "figures"
 FIGURES.mkdir(parents=True, exist_ok=True)
 
