@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ireland is above the EU average on waiting, below it on cost</title>
+  <meta name="description" content="Ireland vs EU (Jenny): one chart from the Waiting or Paying? report, on its own page for the presentation.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- One chart on its own page, opened from the presentation. charts.js reads data-chart and draws only this chart. -->
+<body class="present" data-chart="chart2">
+
+<header class="top">
+  <div class="top-inner">
+    <p class="eyebrow">The Foreigners, Data Visualisation, TUS</p>
+    <p class="brand">Waiting or paying? Healthcare access in Ireland</p>
+  </div>
+  <nav class="tabs" aria-label="Charts">
+    <a href="../daniel-cost-vs-waiting/index.html">1 Waiting vs cost (Daniel)</a>
+    <a href="../jenny-ireland-vs-eu/index.html" aria-current="page">2 Ireland vs EU (Jenny)</a>
+    <a href="../steven-waiting-list/index.html">3 The waiting list (Steven)</a>
+    <a href="../alessandro-list-vs-survey/index.html">4 List vs survey (Alessandro)</a>
+    <a href="../index.html#chart2">Full report</a>
+  </nav>
+</header>
+
+<main>
+    <p class="kicker">Chart 2 &middot; Question 2, Ireland vs the EU</p>
+    <h1>Ireland is above the EU average on waiting, below it on cost</h1>
+
+    <div class="card first">
+      <p class="title">Waiting and cost, 2016 to 2025</p>
+      <p class="sub">Ireland against the EU average, % of people aged 16+, same scale in both panels.</p>
+      <div class="row two">
+        <div>
+          <p class="mini-title">Waiting list</p>
+          <div class="chart short">
+            <canvas id="ireland-waiting" role="img"
+              aria-label="Line chart: Ireland against the EU average on the waiting reason, 2016 to 2025. Ireland is above the EU average in every year."></canvas>
+          </div>
+        </div>
+        <div>
+          <p class="mini-title">Too expensive</p>
+          <div class="chart short">
+            <canvas id="ireland-cost" role="img"
+              aria-label="Line chart: Ireland against the EU average on the cost reason, 2016 to 2025. Ireland is below the EU average from 2020."></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <p class="title" id="rank-title"></p>
+      <p class="sub">% of people aged 16+, 2025, highest at the top.</p>
+      <div class="row two">
+        <div>
+          <p class="mini-title">Waiting list</p>
+          <div class="chart tall">
+            <canvas id="rank-waiting" role="img"
+              aria-label="Sorted bar chart of the 27 EU countries and the EU average on the waiting reason in 2025, with Ireland highlighted."></canvas>
+          </div>
+        </div>
+        <div>
+          <p class="mini-title">Too expensive</p>
+          <div class="chart tall">
+            <canvas id="rank-cost" role="img"
+              aria-label="Sorted bar chart of the 27 EU countries and the EU average on the cost reason in 2025, with Ireland highlighted."></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="key">
+        <span><i style="background: var(--waiting)"></i>Ireland (waiting)</span>
+        <span><i style="background: var(--cost)"></i>Ireland (cost)</span>
+        <span><i style="background: var(--eu)"></i>EU27 average</span>
+        <span><i style="background: var(--other)"></i>Other EU countries</span>
+      </div>
+    </div>
+
+    <p class="keep"><strong>Keep in mind.</strong> Ireland's series has a break in 2019 and 2020, which the chart does not mark. The ranking shows order, not the size of the gaps, and it is one year only. The EU average is Eurostat's own weighted figure.</p>
+</main>
+
+<footer>Huong "Jenny" Tran, Daniel Raducan, Yu Lin "Steven" Wan, Alessandro Bellassai. Sources: Eurostat EU-SILC (hlth_silc_08) and NTPF outpatient waiting list open data, accessed November 2026.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="../data.js"></script>
+<script src="../js/charts.js"></script>
+
+</body>
+</html>

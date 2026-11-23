@@ -18,6 +18,7 @@
     <a href="#overview" data-view="overview">Overview</a>
     <a href="#problem" data-view="problem">Problem</a>
     <a href="#approach" data-view="approach">How we show it</a>
+    <a href="#chart1" data-view="chart1">1 The shift</a>
     <a href="#chart2" data-view="chart2">2 Ireland vs EU</a>
     <a href="#chart3" data-view="chart3">3 The list</a>
     <a href="#chart4" data-view="chart4">4 List vs survey</a>
@@ -56,7 +57,13 @@
     </div>
 
     <h2>Findings</h2>
-    <div class="row two">
+    <div class="row three">
+      <a class="card link" href="#chart1">
+        <p class="num">1</p>
+        <p class="finding">Waiting has replaced cost as the main reason</p>
+        <p class="stat-note">Waiting 1.0% to 2.1%, cost 1.5% to 0.6%, 2016 to 2025</p>
+        <p class="more">See chart 1</p>
+      </a>
       <a class="card link" href="#chart2">
         <p class="num">2</p>
         <p class="finding">Ireland is above the EU average on waiting</p>
@@ -88,7 +95,13 @@
     </div>
 
     <h2>Questions</h2>
-    <div class="row two">
+    <div class="row three">
+      <a class="card link" href="#chart1">
+        <p class="num">1</p>
+        <p class="finding">The shift</p>
+        <p class="stat-note">Between 2016 and 2025, has the main reason people in Ireland go without care moved from cost to waiting?</p>
+        <p class="more">Chart 1, see change over time</p>
+      </a>
       <a class="card link" href="#chart2">
         <p class="num">2</p>
         <p class="finding">Ireland vs the EU</p>
@@ -148,6 +161,12 @@
         </thead>
         <tbody>
           <tr>
+            <td><a href="#chart1">1</a> See change over time</td>
+            <td>Line chart, two lines on one 0 to 3% scale</td>
+            <td>Two measures over ten years, and the story is where waiting overtakes cost. A point for each survey year, hollow in the break years.</td>
+            <td>Grouped bars hide the crossover. A slope chart of 2016 and 2025 hides the 2017 crossover and the 2024 peak.</td>
+          </tr>
+          <tr>
             <td><a href="#chart2">2</a> Compare Ireland with a benchmark</td>
             <td>Two line panels on one scale, then sorted bars</td>
             <td>The same scale makes waiting and cost comparable. Sorted bars from zero show where Ireland sits among the countries.</td>
@@ -186,11 +205,45 @@
         </p>
       </div>
     </div>
-    <div class="pager"><a href="#problem">Back: the problem</a><a href="#chart2">Next: chart 2</a></div>
+    <div class="pager"><a href="#problem">Back: the problem</a><a href="#chart1">Next: chart 1</a></div>
   </section>
 
 
-  <!-- Chart 1 (Daniel) goes here later: a view like the ones below, plus its tab, its finding and its question above -->
+  <section class="view" id="v-chart1">
+    <p class="kicker">Chart 1 &middot; Question 1, the shift</p>
+    <h1>In Ireland, waiting now stops more people than cost</h1>
+
+    <div class="card first">
+      <p class="title">Waiting and cost in Ireland, 2016 to 2025</p>
+      <p class="sub">Main reason for not getting a needed medical examination, % of people aged 16+. Hollow points mark the break in Ireland's series (2019 and 2020), and the grey band marks the COVID years.</p>
+      <div class="chart wide">
+        <canvas id="shift" role="img"
+          aria-label="Line chart of waiting and cost as the reason for going without care in Ireland, 2016 to 2025. Cost is higher in 2016 (1.5% against 1.0%). Waiting is higher every year from 2017, peaks at 2.7% in 2024 and is 2.1% in 2025, while cost is 0.6%."></canvas>
+      </div>
+    </div>
+
+    <div class="row two">
+      <div class="card">
+        <p class="title">Why this chart</p>
+        <p class="plain">
+          Two measures over ten years, and the story is the point where waiting overtakes cost, so a line chart shows both the change and the crossover.
+          Grouped bars would split each year into two bars and hide the crossover, and a slope chart of 2016 and 2025 would hide the 2017 crossover and the 2024 peak.
+          The axis starts at zero and runs to 3%, the same as chart 2, so small values are not exaggerated.
+        </p>
+      </div>
+      <div class="card">
+        <p class="title">What it shows</p>
+        <p class="plain">
+          In 2016 cost was the bigger reason (1.5% against 1.0%). From 2017 waiting is higher every year, although the gap is only 0.1 points in 2018 and 2019.
+          The lines move apart from 2021: waiting reaches 2.7% in 2024 and is 2.1% in 2025, while cost is 0.6%. By 2025 waiting is about three and a half times cost.
+        </p>
+      </div>
+    </div>
+    <p class="keep"><strong>Keep in mind.</strong> The values are small, so a change of 0.1 or 0.2 points can be survey noise. 2019 and 2020 are break years, and the big change happens across the COVID years, so the chart shows a pattern, not a cause. The survey covers all medical care, not only hospital care.</p>
+    <div class="pager"><a href="#approach">Back: how we show it</a><a href="#chart2">Next: chart 2</a></div>
+  </section>
+
+
 
   <section class="view" id="v-chart2">
     <p class="kicker">Chart 2 &middot; Question 2, Ireland vs the EU</p>
@@ -263,7 +316,7 @@
       </div>
     </div>
     <p class="keep"><strong>Keep in mind.</strong> Ireland's series has a break in 2019 and 2020, which the chart does not mark. The ranking shows order, not the size of the gaps, and it is one year only. The EU average is Eurostat's own weighted figure.</p>
-    <div class="pager"><a href="#approach">Back: how we show it</a><a href="#chart3">Next: chart 3</a></div>
+    <div class="pager"><a href="#chart1">Back: chart 1</a><a href="#chart3">Next: chart 3</a></div>
   </section>
 
 

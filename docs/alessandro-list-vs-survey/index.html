@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The list and the survey rose overall, but not in step every year</title>
+  <meta name="description" content="List vs survey (Alessandro): one chart from the Waiting or Paying? report, on its own page for the presentation.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- One chart on its own page, opened from the presentation. charts.js reads data-chart and draws only this chart. -->
+<body class="present" data-chart="chart4">
+
+<header class="top">
+  <div class="top-inner">
+    <p class="eyebrow">The Foreigners, Data Visualisation, TUS</p>
+    <p class="brand">Waiting or paying? Healthcare access in Ireland</p>
+  </div>
+  <nav class="tabs" aria-label="Charts">
+    <a href="../daniel-cost-vs-waiting/index.html">1 Waiting vs cost (Daniel)</a>
+    <a href="../jenny-ireland-vs-eu/index.html">2 Ireland vs EU (Jenny)</a>
+    <a href="../steven-waiting-list/index.html">3 The waiting list (Steven)</a>
+    <a href="../alessandro-list-vs-survey/index.html" aria-current="page">4 List vs survey (Alessandro)</a>
+    <a href="../index.html#chart4">Full report</a>
+  </nav>
+</header>
+
+<main>
+    <p class="kicker">Chart 4 &middot; Question 3, moving together?</p>
+    <h1>The list and the survey rose overall, but not in step every year</h1>
+
+    <div class="card first">
+      <p class="sub">The same years in two panels. Each panel has its own scale, and the top one starts at 500 thousand.</p>
+      <p class="mini-title left">People on the outpatient waiting list (yearly average, thousands)</p>
+      <div class="chart half">
+        <canvas id="cmp-list" role="img"
+          aria-label="Line chart of the yearly average waiting list, 2019 to 2025. It rises to about 636,000 in 2021, falls to about 586,000 in 2024 and rises to about 602,000 in 2025."></canvas>
+      </div>
+      <p class="mini-title left">Went without care because of waiting, Ireland (% of people aged 16+)</p>
+      <div class="chart half">
+        <canvas id="cmp-survey" role="img"
+          aria-label="Line chart of the survey answer, 2019 to 2025. It rises from 1.0% to 2.7% in 2024 and is 2.1% in 2025."></canvas>
+      </div>
+    </div>
+
+    <p class="keep"><strong>Keep in mind.</strong> This shows direction, not cause. The survey covers all medical care and the list covers hospital outpatients only. Eurostat flags a break in Ireland's series in 2019 and 2020, and the 2021 average uses 11 snapshots because June is missing.</p>
+</main>
+
+<footer>Huong "Jenny" Tran, Daniel Raducan, Yu Lin "Steven" Wan, Alessandro Bellassai. Sources: Eurostat EU-SILC (hlth_silc_08) and NTPF outpatient waiting list open data, accessed November 2026.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="../data.js"></script>
+<script src="../js/charts.js"></script>
+
+</body>
+</html>
