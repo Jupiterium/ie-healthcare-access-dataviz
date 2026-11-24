@@ -1,6 +1,6 @@
-# Builds docs/data.js from the two prepared tables, so the dashboard uses the same numbers as the notebooks.
+# Builds dashboard/data.js from the two prepared tables, so the dashboard uses the same numbers as the notebooks.
 
-# Run from the repo folder:  python docs/make_data.py
+# Run from the repo folder:  python dashboard/make_data.py
 
 import glob
 import json
@@ -78,5 +78,5 @@ waiting_list = {
 }
 
 data = {"survey": survey, "ranking": ranking, "rank": rank, "list": waiting_list}
-Path("docs/data.js").write_text("const DATA = " + json.dumps(data, separators=(",", ":")) + ";\n", encoding="utf-8")
-print("saved docs/data.js | Ireland's rank:", rank, "| break years:", survey["break_years"], "| months:", len(months))
+Path("dashboard/data.js").write_text("const DATA = " + json.dumps(data, separators=(",", ":")) + ";\n", encoding="utf-8")
+print("saved dashboard/data.js | Ireland's rank:", rank, "| break years:", survey["break_years"], "| months:", len(months))
